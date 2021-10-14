@@ -20,13 +20,13 @@ public class Course {
     private String town;
 
     @Column(name = "rating")
-    private Integer rating;
+    private Double rating;
 
     @JsonIgnoreProperties({"courses"})
     @OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
     private List<Booking> bookings;
 
-    public Course(String name, String town, Integer rating) {
+    public Course(String name, String town, Double rating) {
         this.name = name;
         this.town = town;
         this.rating = rating;
@@ -59,11 +59,11 @@ public class Course {
         this.town = town;
     }
 
-    public Integer getRating() {
+    public Double getRating() {
         return rating;
     }
 
-    public void setRating(Integer rating) {
+    public void setRating(Double rating) {
         this.rating = rating;
     }
 
